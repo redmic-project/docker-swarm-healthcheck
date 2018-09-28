@@ -29,6 +29,8 @@ docker-build-development:
 
 docker-build-stable:
   stage: package
+  variables:
+    DOCKER_HUB_IMAGE: ${DOCKER_HUB_USER}/${CI_PROJECT_NAME}
   only:
     - master
   script:
