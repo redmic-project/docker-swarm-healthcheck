@@ -1,0 +1,11 @@
+version: '3.5'
+
+services:
+  swarm-healthcheck:
+    image: ${IMAGE_NAME:-registry.gitlab.com/redmic-project/docker/swarm-healthcheck}:${IMAGE_TAG:-latest}
+    build:
+      context: .
+      dockerfile: ${DOCKERFILE:-Dockerfile}
+      args:
+        NODE_IMAGE_TAG:
+        DOCKER_VERSION:
